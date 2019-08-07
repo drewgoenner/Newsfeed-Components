@@ -128,8 +128,6 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   const par2 = document.createElement('p');
   const par3 = document.createElement('p');
   const expand = document.createElement('span');
-  // const expandOpen = document.createElement('button')
-  // const expandClose = document.createElement('button');
 
   article1.appendChild(title1);
   article1.appendChild(date1);
@@ -137,16 +135,10 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   article1.appendChild(par2);
   article1.appendChild(par3);
   article1.appendChild(expand);
-  // expand.appendChild(expandOpen);
-  // expand.appendChild(expandClose);
 
   article1.classList.add('article');
-  // article1.classList.add('article-open');
-  // article1.classList.add('article-close')
   date1.classList.add('date');
   expand.classList.add('expandButton');
-  // expand.classList.add('article-open');
-
 
   title1.textContent = title;
   date1.textContent = date;
@@ -158,23 +150,15 @@ function createArticle(title, date, firstParagraph, secondParagraph, thirdParagr
   expand.addEventListener('click', (e) => {
     console.log('expander clicked', event.target);
     article1.classList.toggle('article-open');
-
   })
 
   return article1;
 }
+TweenMax.to(".article", 2.5, {ease: Expo.easeOut, x: "10%"});
 
 
 })
 
-
-// const newArticle = data.map((title, date, firstParagraph, secondParagraph, thirdParagraph) => {
-//   const newArt = createArticle(title, date, firstParagraph, secondParagraph, thirdParagraph);
-//   return newArt
-// })
-// newArticle("frog", "August 7, 2019", "BLAHBLAHBLAHBLAHBLAHBLAHBLAH", "YUCKYUCKYUCKYUCKYUCK", "BLECHBLECHBLECHBLECHBLECH")
-
-// })
 
 
 
